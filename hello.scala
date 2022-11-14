@@ -1,20 +1,20 @@
 //==================================PROGRAMME N°1==================================
-object Hello {
-    def main(args: Array[String]) = {
-        println("Hello, world")
-	var var3=2
-	if(var3==1)
-	{
-		println("True")
-	}
-	else
-	{
-		println("False")
-	}
-
-    }
-
-}
+//object Hello {
+//    def main(args: Array[String]) = {
+//        println("Hello, world")
+//	var var3=2
+//	if(var3==1)
+//	{
+//		println("True")
+//	}
+//	else
+//	{
+//		println("False")
+//	}
+//
+//    }
+//
+//}
 
 //==================================PROGRAMME N°2 (14/11/22)==================================
 object Geeks
