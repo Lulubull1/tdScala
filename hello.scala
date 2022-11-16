@@ -1,4 +1,6 @@
 //==================================PROGRAMME N°1==================================
+//On test une egalite
+
 //object Hello {
 //    def main(args: Array[String]) = {
 //        println("Hello, world")
@@ -18,6 +20,8 @@
 
 //(14/11/22)
 //==================================PROGRAMME N°2==================================
+//On demande a l'utilisateur de saisir une valeur
+
 //object Geeks
 //{
 //	//Main methods
@@ -60,14 +64,86 @@
 //}
 
 //==================================PROGRAMME N°5==================================
+//object Geeks
+//{
+//	def multi10(m:Int):Int=m*10
+//
+//	def main(args: Array[String])
+//	{
+//		println(multi10(2))
+//	}
+//		
+//}
+
+//==================================PROGRAMME N°6==================================
+//object Geeks
+//{
+//	def multi(m:Int,n:Int):Int=m*n
+//
+//	def main(args: Array[String])
+//	{
+//		println(multi(5,5))
+//	}
+//		
+//}
+
+//==================================PROGRAMME N°7==================================
+//On cree des listes
+
+//bject Geeks
+//
+//	def main(args: Array[String])
+//	{
+//		//val fruits : List[String] = List("Bananes", "oranges", "pommes")
+//		//val chiffres : List[Int] = List(1, 3, 9, 7)
+//		//val listeDeListes : List[List[Int]] = List(List(1, 3), List(2,5,7))
+//
+//		val fruits = List("Bananes", "Oranges", "Pommes")
+//		val chiffres = List(1,3,9,7)
+//		val listeDeListes = List(List(1,3), List(2,5,7))
+//
+//		println(fruits)
+//		println(chiffres)
+//		println(listeDeListes)
+//	}
+//
+
+//Version courte / optimisee
+
 object Geeks
 {
-	def multi10(m:Int):Int=m*10
+	def exercice1()
+	{
+		val chiffres = List(1,3,9,7)
+
+		println("============1ere methode============")
+
+		chiffres.foreach{println}
+
+		//le _ est l'element que l'on compare
+		val chiffres2 = chiffres.filter(_ <= 3)
+
+		println("- Liste des chiffres inferieur ou egal a 3 :")
+		println(chiffres2)
+	}
+
+	def exercice2()
+	{
+		val chiffres : List[Int] = List(1,3,9,7)
+
+		println("============2eme methode============")
+
+		for(element<-chiffres) println(element)
+
+		val chiffres2 = chiffres.filter(_ <= 3)
+
+		println("- Liste des chiffres inferieur ou egal a 3 :")
+		println(chiffres2)
+	}
 
 	def main(args: Array[String])
 	{
-		println(multi10(2))
+		exercice1()
+		exercice2()
 	}
-		
 }
-
