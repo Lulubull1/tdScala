@@ -48,16 +48,26 @@
 //}
 
 //==================================PROGRAMME N°4==================================
+//object Geeks
+//{
+//	//Main methods
+//	def main(args: Array[String])
+//	{
+//		var iteration = args(0).toInt
+//		for(a<-1 to iteration)
+//			println("Valeur de a :"+a)
+//	}
+//}
+
+//==================================PROGRAMME N°5==================================
 object Geeks
 {
-	//Main methods
+	def multi10(m:Int):Int=m*10
+
 	def main(args: Array[String])
 	{
-		var iteration = args(0).toInt
-		for(a<-1 to iteration)
-			println("Valeur de a :"+a)
+		println(multi10(2))
 	}
+		
 }
 
-//By Lulubull
-//Test
