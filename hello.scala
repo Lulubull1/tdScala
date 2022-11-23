@@ -110,40 +110,70 @@
 
 //Version courte / optimisee
 
+//object Geeks
+//{
+//	def exercice1()
+//	{
+//		val chiffres = List(1,3,9,7)
+//
+//		println("============1ere methode============")
+//
+//		chiffres.foreach{println}
+//
+//		//le _ est l'element que l'on compare
+//		val chiffres2 = chiffres.filter(_ <= 3)
+//
+//		println("- Liste des chiffres inferieur ou egal a 3 :")
+//		println(chiffres2)
+//	}
+//
+//	def exercice2()
+//	{
+//		val chiffres : List[Int] = List(1,3,9,7)
+//
+//		println("============2eme methode============")
+//
+//		for(element<-chiffres) println(element)
+//
+//		val chiffres2 = chiffres.filter(_ <= 3)
+//
+//		println("- Liste des chiffres inferieur ou egal a 3 :")
+//		println(chiffres2)
+//	}
+//
+//	def main(args: Array[String])
+//	{
+//		exercice1()
+//		exercice2()
+//	}
+//}
+
+//==================================PROGRAMME N°8==================================
+//object Geeks
+//{
+//	def main(args: Array[String])
+//	{
+//		val lettres = List("AA", "BBB", "C", "DDDD")
+//
+//		lettres.map(ele=>(ele,ele.length)).foreach(println)
+//	}
+//}
+
+//==================================PROGRAMME N°9==================================
 object Geeks
 {
-	def exercice1()
-	{
-		val chiffres = List(1,3,9,7)
-
-		println("============1ere methode============")
-
-		chiffres.foreach{println}
-
-		//le _ est l'element que l'on compare
-		val chiffres2 = chiffres.filter(_ <= 3)
-
-		println("- Liste des chiffres inferieur ou egal a 3 :")
-		println(chiffres2)
-	}
-
-	def exercice2()
-	{
-		val chiffres : List[Int] = List(1,3,9,7)
-
-		println("============2eme methode============")
-
-		for(element<-chiffres) println(element)
-
-		val chiffres2 = chiffres.filter(_ <= 3)
-
-		println("- Liste des chiffres inferieur ou egal a 3 :")
-		println(chiffres2)
-	}
-
 	def main(args: Array[String])
 	{
-		exercice1()
-		exercice2()
+		//val lettres = List("AA", "BBB", "C", "DDDD")
+
+		//lettres.map(ele=>(ele,ele.length)).foreach(println)
+
+		//val chiffres = List(1,1,2,3,2,4,5)
+
+		//chiffres.map(ele=>(ele,ele.length)).foreach(println)
+		//chiffres.groupBy(ele=>ele).map(ele=>(ele._1,ele._2.length)).foreach(println)
+
+		val lettreChiffres = List(("A",4),("B",5),("C",5),("A",5),("C",4))
+		lettreChiffres.groupBy(ele=>ele).map(ele=>(ele._1,ele._2.length)).foreach(println)
 	}
 }
