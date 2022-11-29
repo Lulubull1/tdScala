@@ -16,7 +16,7 @@ class Etudiant(nomEtu:String, prenomEtu:String, ageEtu:Int, adresseEtu:String){
     override def toString():String=nom+" "+prenom+" "+age+" "+adresse
 }
 
-//class note (numero etudiant, nom module, la note)
+//class note (numero etudiant,nom module,la note)
 
 object STID2{
     def main(args: Array[String])
