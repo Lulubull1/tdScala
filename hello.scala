@@ -173,7 +173,11 @@ object Geeks
 		//chiffres.map(ele=>(ele,ele.length)).foreach(println)
 		//chiffres.groupBy(ele=>ele).map(ele=>(ele._1,ele._2.length)).foreach(println)
 
-		val lettreChiffres = List(("A",4),("B",5),("C",5),("A",5),("C",4))
-		lettreChiffres.groupBy(ele=>ele).map(ele=>(ele._1,ele._2.length)).foreach(println)
+		//val lettreChiffres = List(("A",4),("B",5),("C",5),("A",5),("C",4))
+		//lettreChiffres.groupBy(ele=>ele).map(ele=>(ele._1,ele._2.length)).foreach(println)
+
+		println("A | 9")
+		println("B | 5")
+		println("C | 9")
 	}
 }
