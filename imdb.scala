@@ -1,30 +1,39 @@
-import java.text.SimpleDateFormat
-import java.util.Date
-
-class Etudiant(nomEtu:String, prenomEtu:String, ageEtu:Int, adresseEtu:String){
-
-    var nom: String=nomEtu
-    var prenom: String=prenomEtu
-    var age: Int=ageEtu
-    var adresse: String=adresseEtu
-
-    def changeAge(newAge: Int)
-    {
-        age=newAge
-    }
-    def changeAdresse(newAdresse: String)
-    {
-        adresse=newAdresse
-    }
-    override def toString():String=nom+" "+prenom+" "+age+" "+adresse
+class Movie(mID:Int, title:String, year:Date, director:String){
+    var filmID: Int=mID
+    var titre: String=title
+    var annee: Int=year
+    var directeur: String=director
 }
 
+class Rating(rID:Int, name:String){
+    var critiqueID: Int=rID
+    var name: String=name
+}
 
-object STID2{
+class Rating(rID:Int, mID:Int, stars:Int, ratingDate:Date){
+    var critiqueID: Int=rID
+    var filmID: String=mID
+    var stars: Int=stars
+    var dateNote: String=direcratingDatetor
+}
+
+object csv{
+
     def main(args: Array[String])
     {
-        val format = new SimpleDateFormat("yyyy-MM-dd")
-        val date = format.parse("2018-03-03")
-        println(date)
+        val bufferedSource = io.Source.fromFile("data/movie.csv")
+            
+            for (line <- bufferedSource.getLines) {
+                val cols = line.split(",").map(_.trim)
+                val movie = new(cols(0).toInt, cols(1).substring(1, cols(1).length()-1), cols(2).toInt, cols(3).substring(1, cols(3).length()-1))
+                movies = movies :+ movie
+            }
+            bufferedSource.close
+            return movies
+    }
+
+    def loadMovieData(args: Array[String]){
+        var movies:Array[Movie] = loadMovieData("data/movie.csv")
+        println(movies[0])
     }
 }
