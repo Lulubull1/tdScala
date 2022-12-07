@@ -1,46 +1,75 @@
-class Movie(mID:Int, title:String, year:Date, director:String){
-    var filmID: Int=mID
-    var titre: String=title
-    var annee: Int=year
-    var directeur: String=director
+class Movie (id:Int, mTitle:String, mYear:Int,mDirector:String)
+{
+    val mid=id
+    var title=mTitle
+    var year=mYear
+    var director=mDirector
+    override def toString():String = {
+    "[Mid:"+mid + "]," + "[Title:"+title+ "]," +"[Year:"+year+ "]," + "[Director:"+director+ "]"
+    }
 }
 
-class Rating(rID:Int, name:String){
-    var critiqueID: Int=rID
-    var name: String=name
+// Rating(rID, mID, stars, ratingDate)
+class Rating(p_rId:Int, p_mId:Int, p_stars:Int, p_ratingDate:String)
+{
+    val rID=p_rId
+    val mId=p_mId
+    val stars=p_stars
+    val ratingDate=p_ratingDate
+    override def toString():String = {
+    "[Rid:"+rID + "]," + "[Mid:"+mId+ "]," +"[stars:"+stars+ "]," + "[ratingDate:"+ratingDate+ "]"
+    }
 }
 
-class Reviewer(rID:Int, mID:Int, stars:Int, ratingDate:Date){
-    var critiqueID: Int=rID
-    var filmID: String=mID
-    var stars: Int=stars
-    var dateNote: String=direcratingDatetor
+// Reviewer(rID, name)
+class Reviewer
+{
+
 }
 
-object csv{
+object Geeks 
+{
+    def loadMovieData(path:String):Array[Movie]=
+    {
+        var movies:Array[Movie] =Array.empty
+            val bufferedSource = io.Source.fromFile(path)
+        for (line <- bufferedSource.getLines) {
+        val values = line.split(",").map(_.trim)
+        val movie=new Movie(values(0).toInt, values(1).substring(1, values(1).length()-1), values(2).toInt, values(3).substring(1, values(3).length()-1))
+        movies = movies :+ movie
+        }
+        bufferedSource.close
+        return movies;
+    }
 
+    def loadRatingData(path:String):Array[Rating]=
+    {
+        var ratings:Array[Rating] =Array.empty
+            val bufferedSource = io.Source.fromFile(path)
+        for (line <- bufferedSource.getLines) {
+        val values = line.split(",").map(_.trim)
+        val rating=new Rating(values(0).toInt, values(1).toInt, values(2).toInt, values(3))
+        ratings = ratings :+ rating
+        }
+        bufferedSource.close
+        return ratings;
+    }
+
+    def f_filter1(ratings:Array[Rating]):Array[Rating]=
+    {
+        return ratings.filter(_.stars>=4)
+    }
     
-    def loadMovieData(args: Array[String])
+    def getMovieFromMid(p_mid:Int,movies:Array[Movie]):Array[Movie]=
     {
-        var movies:Array[Movie] = loadMovieData("data/movie.csv")
-        println(movies[0])
-
-        val bufferedSource = io.Source.fromFile("data/movie.csv")
-            
-            for (line <- bufferedSource.getLines) {
-                val cols = line.split(",").map(_.trim)
-                val movie = new Movie(cols(0).toInt, cols(1).substring(1, cols(1).length()-1), cols(2).toInt, cols(3).substring(1, cols(3).length()-1))
-                movies = movies :+ movie
-            }
-            bufferedSource.close
-            return movies
+        return movies.filter(_.mid==p_mid)
     }
 
-    def main(args: Array[String])
+    def main(args: Array[String]) 
     {
-        movies.filter(_.director=="Steven Spielberg")
-            foreach(println)
-
+        var movies:Array[Movie] =loadMovieData("data/movie.csv")
+        var ratings:Array[Rating] =loadRatingData("data/rating.csv")
+        //f_filter1(ratings).foreach(x=>println(getMovieFromMid(x.mId,movies)(0).year))
+        f_filter1(ratings).map(x=>println(getMovieFromMid(x.mId,movies)(0).year)).distinct.sorted.foreach(println)
     }
-
 }

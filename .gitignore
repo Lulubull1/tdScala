@@ -5,3 +5,7 @@ Geeks.class
 Etudiant.class
 STID2.class
 STID2$.class
+Movie.class
+Rating.class
+.gitignore
+Reviewer.class
