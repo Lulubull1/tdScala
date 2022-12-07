@@ -65,11 +65,32 @@ object Geeks
         return movies.filter(_.mid==p_mid)
     }
 
+
+
+
+    def f_filter2(movies:Array[Rating]):Array[Rating]=
+    {
+        return movies.filter(_.title=="Gone with the Wind")
+    }
+
+    def getRatingFromMid(p_mid:Int,ratings:Array[Rating]):Array[Rating]=
+    {
+        return ratings.filter(_.mid==p_mid)
+    }
+
+    def getReviewerFromRid(p_rid:Int,reviewers:Array[Reviewer]):Array[Reviewer]=
+    {
+        return reviewers.filter(_.rid==p_rid)
+    }
+
     def main(args: Array[String]) 
     {
         var movies:Array[Movie] =loadMovieData("data/movie.csv")
         var ratings:Array[Rating] =loadRatingData("data/rating.csv")
         //f_filter1(ratings).foreach(x=>println(getMovieFromMid(x.mId,movies)(0).year))
-        f_filter1(ratings).map(x=>println(getMovieFromMid(x.mId,movies)(0).year)).distinct.sorted.foreach(println)
+        //f_filter1(ratings).map(x=>println(getMovieFromMid(x.mId,movies)(0).year)).distinct.sorted.foreach(println)
+        f_filter2(movies).foreach(println)
+        getRatingFromMid(101,ratings).foreach(println)
+        getReviewerFromRid(201,reviewers).foreach(println)
     }
 }
