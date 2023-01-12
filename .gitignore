@@ -9,3 +9,9 @@ Movie.class
 Rating.class
 .gitignore
 Reviewer.class
+Examen/Candidature.class
+.gitignore
+Examen/Universite.class
+Examen/Eleve.class
+Examen/programmePrincipal.class
+Examen/programmePrincipal$.class
