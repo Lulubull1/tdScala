@@ -80,7 +80,9 @@ object Main
         var eleves:Array[Eleve] =loadEleveData("data/eleve.csv")
         var candidatures:Array[Candidature] =loadCandidatureData("data/candidature.csv")
 
-        //Extraire le nombre d'eleves avec un nom different
-        println(eleves.filter(x=>x.nomE(0)=='A'||x.nomE(0)=='a').distinct.length)
+
+        universites.foreach(println)
+        eleves.foreach(println)
+        candidatures.foreach(println)
     }
 }

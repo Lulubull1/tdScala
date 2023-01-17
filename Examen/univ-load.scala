@@ -82,12 +82,15 @@ object programmePrincipal{
     }
 
 //==========================================FONCTION MAIN==========================================
-def main(args: Array[String]) 
-    {
-        var universite:Array[Universite] =loadUniversite("data/universite.csv")
-        var eleve:Array[Eleve] =loadEleve("data/eleve.csv")
-        var candidature:Array[Candidature] =loadCandidature("data/candidature.csv")
+    def main(args: Array[String]) 
+        {
+            var universite:Array[Universite] =loadUniversite("data/universite.csv")
+            var eleve:Array[Eleve] =loadEleve("data/eleve.csv")
+            var candidature:Array[Candidature] =loadCandidature("data/candidature.csv")
 
-        println(universite.count)
-    }
+            universite.foreach(println)
+            //eleve.foreach(println)
+            //candidature.foreach(println)
+        }
 }
+
